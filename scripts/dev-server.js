@@ -38,6 +38,7 @@ const server = createServer((request, response) => {
     }
 
     response.writeHead(200, {
+      "Cache-Control": "no-store",
       "Content-Length": stats.size,
       "Content-Type": mimeTypes[extname(filePath).toLowerCase()] ?? "application/octet-stream",
     });

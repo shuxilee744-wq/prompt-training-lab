@@ -120,6 +120,7 @@ export const exercises = [
     prompt: "将下面弱 prompt 改写成包含角色、任务、框架、输出和约束的版本。",
     material: "帮我写一篇关于远程办公的文章，写得专业一点。",
     starter: "你是",
+    focusKeys: ["role", "task", "framework", "output", "constraints"],
     referenceAnswer:
       "你是一位面向企业管理者的组织研究写作者。请围绕“远程办公如何改变团队协作”写一篇 1000 字文章。按“变化现象、管理挑战、可执行建议”三部分展开。语言具体、克制，避免空泛口号。",
   },
@@ -131,6 +132,7 @@ export const exercises = [
     prompt: "把“你是专家”改写成更有判断力的角色设定。",
     material: "场景：分析一家公司的增长问题。",
     starter: "你是一位",
+    focusKeys: ["role"],
     referenceAnswer:
       "你是一位增长诊断顾问，擅长从用户获取、转化、留存和商业化四个环节识别增长瓶颈。你不做泛泛建议，而是优先找出最限制增长的结构性约束。",
   },
@@ -142,6 +144,7 @@ export const exercises = [
     prompt: "为这个产品分析 prompt 增加一个清晰的世界观。",
     material: "帮我看看这个在线课程产品有什么问题。",
     starter: "你认为",
+    focusKeys: ["role", "framework"],
     referenceAnswer:
       "你认为在线课程不是视频仓库，而是一套帮助用户持续完成学习任务的行为系统。请从学习动机、路径清晰度、反馈机制和完成成本四个角度分析这个产品的问题。",
   },
@@ -153,6 +156,7 @@ export const exercises = [
     prompt: "不要使用“深入”这个词，改成具体分析路径。",
     material: "请深入分析年轻人不愿意加班这个现象。",
     starter: "请从",
+    focusKeys: ["framework", "vague"],
     referenceAnswer:
       "请从三层分析年轻人不愿意加班：现象层说明行为变化；机制层解释薪酬、成长、组织信任如何影响选择；本质层指出这个现象背后的交换关系变化。",
   },
@@ -164,6 +168,7 @@ export const exercises = [
     prompt: "给“沟通维度”补三个具体问题。",
     material: "场景：分析团队会议记录中的沟通文化。",
     starter: "沟通维度：",
+    focusKeys: ["framework"],
     referenceAnswer:
       "沟通维度：他们讨论问题时是否直指事实？责任主语是清楚的“我/我们”，还是模糊的“有人/应该”？冲突出现时，是追问证据，还是快速转移话题？",
   },
@@ -175,6 +180,7 @@ export const exercises = [
     prompt: "为这个任务设计明确输出格式。",
     material: "请给我一些提升公众号文章质量的建议。",
     starter: "请输出",
+    focusKeys: ["output"],
     referenceAnswer:
       "请输出一份文章诊断报告，包含：一句话判断、三个主要问题、每个问题的原文证据、对应修改建议、一个改写示例和下一篇文章的检查清单。",
   },
@@ -186,6 +192,7 @@ export const exercises = [
     prompt: "改写下面 prompt，让风格要求更可执行。",
     material: "帮我润色一下这段话，写得高级一点。",
     starter: "请保留原意",
+    focusKeys: ["constraints", "vague"],
     referenceAnswer:
       "请保留原意进行洗练。语言要克制、准确，减少形容词堆叠，多使用清晰动词。禁止新增原文没有的观点，禁止使用网络流行语，禁止把简单意思写得绕。",
   },
@@ -197,6 +204,7 @@ export const exercises = [
     prompt: "指出这个 prompt 至少三个问题，并给出最小修改版本。",
     material: "帮我分析一下这个市场，越全面越好。",
     starter: "主要问题：\n1. ",
+    focusKeys: ["task", "framework", "output", "vague"],
     referenceAnswer:
       "主要问题：没有目标市场范围，没有分析框架，没有输出格式。最小修改版：请分析【目标市场】。按用户需求、竞争格局、增长驱动、进入壁垒和主要风险五部分输出，每部分给出关键判断和证据来源；信息不足处标注假设。",
   },
@@ -208,6 +216,7 @@ export const exercises = [
     prompt: "写一个可复用的文章分析 prompt 模板，保留变量。",
     material: "目标：以后贴一篇文章，就能得到结构化分析。",
     starter: "你是【角色】。",
+    focusKeys: ["role", "task", "framework", "output", "constraints"],
     referenceAnswer:
       "你是【领域】文章分析师。请阅读用户提供的【文章】，输出结构化分析：1. 核心问题；2. 作者主张；3. 论证结构；4. 关键证据；5. 最薄弱假设；6. 我可以采取的一个行动。语言简洁，所有判断必须基于原文。",
   },
@@ -215,10 +224,11 @@ export const exercises = [
     id: "practice-compose",
     lessonId: "practice",
     type: "compose",
-    title: "为自己的场景写完整 prompt",
+    title: "综合练习：为自己的场景写完整 prompt",
     prompt: "选择一个真实工作场景，写出完整 prompt。",
     material: "建议场景：会议总结、产品调研、文章润色、学习计划、商业分析。",
     starter: "你是",
+    focusKeys: ["role", "task", "framework", "output", "constraints", "vague"],
     referenceAnswer:
       "你是一位会议纪要整理专家。请根据我提供的会议记录，输出：会议目标、关键结论、待办事项、负责人、截止时间、风险点和需要追问的问题。不要补充记录中没有的信息；不确定内容标注为“待确认”。",
   },
